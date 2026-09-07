@@ -3,3 +3,4 @@ numpy>=1.24
 scikit-learn>=1.2
 matplotlib>=3.7
 seaborn>=0.13
+xgboost>=2.0
