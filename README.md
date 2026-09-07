@@ -1,6 +1,36 @@
-# Boston_Housing_Data_Sklearn
-We try to explore the sklearn library and apply linear regression on the Boston Housing Data. We also did some EDA in order to explore the insights of data.
+# Boston Housing Analysis with scikit-learn
 
-This Housing dataset contains information about different houses in Boston. This data was originally a part of UCI Machine Learning Repository and has been removed now.
+This project demonstrates a small, reproducible regression workflow for the
+Boston housing dataset: data loading, tabular analysis, optional EDA plots,
+and comparison of linear, Ridge, and Lasso regression.
 
-There are 506 samples and 13 feature variables in this dataset. The objective is to predict the value of prices of the house using the given features. The dataset itself is available https://archive.ics.uci.edu/ml/datasets/Housing . However, because we are going to use scikit-learn, we can import it right away from the scikit-learn itself.
+The dataset is loaded from OpenML because `sklearn.datasets.load_boston` was
+removed from scikit-learn. The first run requires network access to download
+the cached dataset.
+
+## Run
+
+```bash
+python -m pip install -r requirements.txt
+python boston_house_sklearn.py
+python boston_house_sklearn.py --plots
+```
+
+The command writes `dataset_summary.csv`, `model_results.csv`, and current EDA
+plots to `outputs/`.
+
+## Current EDA
+
+![House price distribution](outputs/plots/target_distribution.png)
+
+![Feature correlation matrix](outputs/plots/correlation_heatmap.png)
+
+![Key feature relationships](outputs/plots/key_relationships.png)
+
+## Modules
+
+- `data.py`: loading and validating features and target
+- `analysis.py`: quality summaries and correlations
+- `eda.py`: optional matplotlib visualizations
+- `modeling.py`: reproducible train/test and cross-validation evaluation
+- `boston_house_sklearn.py`: command-line entry point
