@@ -16,8 +16,20 @@ python boston_house_sklearn.py
 python boston_house_sklearn.py --plots
 ```
 
-The command writes `dataset_summary.csv`, `model_results.csv`, and current EDA
-plots to `outputs/`.
+By default, the command writes results to `outputs/`. To use another location,
+pass the `--output-dir` option:
+
+```bash
+python boston_house_sklearn.py --plots --output-dir artifacts
+```
+
+The generated files are:
+
+- `dataset_summary.csv`: descriptive statistics, missing-value counts, and data
+  types for every column
+- `model_results.csv`: test and cross-validation metrics for each regression
+  model
+- `plots/`: EDA images, generated only when `--plots` is supplied
 
 ## Current EDA
 
